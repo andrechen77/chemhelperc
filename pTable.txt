@@ -1,0 +1,5 @@
+1 H Hydrogen
+2 He Helium
+3 Li Lithium
+4 Be Beryllium
+13 Br Bromine
