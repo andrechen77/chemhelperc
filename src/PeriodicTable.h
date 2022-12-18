@@ -13,5 +13,5 @@ class PeriodicTable {
 
 	PeriodicTable(std::istream &input);
 
-	std::optional<Atom> getAtom(const std::string &symbol);
+	std::optional<Atom> getAtom(const std::string &symbol) const;
 };
