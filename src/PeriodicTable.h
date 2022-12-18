@@ -7,11 +7,11 @@
 #include <optional>
 
 class PeriodicTable {
-    public:
+	public:
 
-    std::set<Element> elements;
+	std::set<Element> elements;
 
-    PeriodicTable(std::istream &input);
+	PeriodicTable(std::istream &input);
 
-    std::optional<Atom> getAtom(const std::string &symbol);
+	std::optional<Atom> getAtom(const std::string &symbol);
 };
