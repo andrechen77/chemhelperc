@@ -48,6 +48,7 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "sstream": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "xlocmon": "cpp"
     }
 }
