@@ -43,12 +43,10 @@ void elementLookup(const PeriodicTable &pTable) {
 void parseFormulas(const PeriodicTable &pTable) {
 	static auto processInput = [](const PeriodicTable &pTable, const std::string &userInput) {
 		std::stringstream ss(userInput);
-		std::optional<std::string> symbol = chem_parser::getSymbol(ss);
-		if (symbol.has_value()) {
-			std::cout << *symbol << "\n";
-		} else {
-			std::cout << "No input detected!\n";
-		}
+		std::string symbol;
+		while (chem_parser::getSymbol(ss, symbol)) {
+			std::cout << "next symbol: " << symbol << "\n";
+		};
 	};
 	processUserInputLoop(pTable, "enter formula", processInput);
 }
