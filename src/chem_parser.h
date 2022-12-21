@@ -6,20 +6,19 @@
 #include <optional>
 
 namespace chem_parser {
-    std::optional<std::string> getSymbol(std::istream &i) {
-        if (i.eof()) {
-            return {};
-        }
-
-        std::string symbol;
-        
-        char nextCharacter;
-        do {
-            nextCharacter = i.get();
-            symbol.push_back(nextCharacter);
-            nextCharacter = i.peek();
-        } while (std::islower(nextCharacter));
-
-        return {symbol};
-    }
+	std::istream &getSymbol(std::istream &i, std::string &output) {
+		output.clear();
+		
+		if (i.eof()) {
+			i.setstate(std::ios_base::failbit);
+			return i;
+		}
+		
+		output.push_back(i.get());
+		while (!i.eof() && std::islower(i.peek())) {
+			output.push_back(i.get());
+		}
+		
+		return i;
+	}
 }
