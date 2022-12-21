@@ -1,6 +1,7 @@
 #include "Element.h"
 #include "PeriodicTable.h"
 #include "chem_parser.h"
+#include "MolecularFormula.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -58,6 +59,9 @@ int main() {
 	PeriodicTable pTable(pTableFile);
 
 	printTable(pTable);
-	parseFormulas(pTable);
-	
+	Atom H = *pTable.getAtom("H");
+	Atom He = *pTable.getAtom("He");
+	Atom Li = *pTable.getAtom("Li");
+	Atom Cl = *pTable.getAtom("Cl");
+	MolecularFormula mf({{H, 1}, {Cl, 2}});
 }

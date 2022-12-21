@@ -13,3 +13,7 @@ const Element &Atom::operator*() const {
 MolecularFormula Atom::toMolecularFormula() const {
 	return MolecularFormula{}; // TODO
 }
+
+bool operator<(const Atom &a, const Atom &b) {
+	return a.element < b.element;
+}
