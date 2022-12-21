@@ -3,5 +3,5 @@
 struct MolecularFormula;
 
 struct Formula {
-	virtual operator MolecularFormula() const = 0;
+	virtual MolecularFormula toMolecularFormula() const = 0;
 };

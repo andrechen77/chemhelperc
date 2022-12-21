@@ -7,5 +7,5 @@
 struct MolecularFormula : Formula {
 	std::map<Atom, int> composition;
 
-	virtual operator MolecularFormula() const override;
+	virtual MolecularFormula toMolecularFormula() const override;
 };

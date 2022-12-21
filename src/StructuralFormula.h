@@ -14,5 +14,5 @@ struct StructuralFormula : Formula {
 
 	StructuralFormula(const std::string formulaString);
 
-	virtual operator MolecularFormula() const override;
+	virtual MolecularFormula toMolecularFormula() const override;
 };

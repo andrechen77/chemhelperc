@@ -10,6 +10,6 @@ const Element &Atom::operator*() const {
 	return element;
 }
 
-Atom::operator MolecularFormula() const {
+MolecularFormula Atom::toMolecularFormula() const {
 	return MolecularFormula{}; // TODO
 }

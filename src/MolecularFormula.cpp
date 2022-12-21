@@ -1,5 +1,5 @@
 #include "MolecularFormula.h"
 
-MolecularFormula::operator MolecularFormula() const {
+MolecularFormula MolecularFormula::toMolecularFormula() const {
 	return *this;
 }

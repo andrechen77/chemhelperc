@@ -14,6 +14,6 @@ StructuralFormula::StructuralFormula(const std::string formula) :
 	
 }
 
-StructuralFormula::operator MolecularFormula() const {
+MolecularFormula StructuralFormula::toMolecularFormula() const {
 	return MolecularFormula{}; // TODO
 }
