@@ -6,11 +6,13 @@
 #include <tuple>
 
 struct StructuralFormula : Formula {
-	std::vector<std::tuple<Formula, int>> composition;
+	std::vector<std::tuple<std::reference_wrapper<Formula>, int>> composition;
 
 	StructuralFormula();
 
-	StructuralFormula(const std::vector<std::tuple<Formula, int>> &&composition);
+	StructuralFormula(const std::vector<std::tuple<std::reference_wrapper<Formula>, int>> &&composition);
 
 	StructuralFormula(const std::string formulaString);
+
+	virtual operator MolecularFormula() const override;
 };

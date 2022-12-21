@@ -9,4 +9,6 @@ struct Atom : Formula {
 	Atom(const Element &element);
 
 	const Element &operator*() const;
+
+	virtual operator MolecularFormula() const override;
 };
