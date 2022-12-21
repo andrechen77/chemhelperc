@@ -14,10 +14,10 @@ MolecularFormula Atom::toMolecularFormula() const {
 	return MolecularFormula{}; // TODO
 }
 
-bool operator<(const Atom &a, const Atom &b) {
-	return a.element < b.element;
+bool Atom::operator<(const Atom &other) const {
+	return this->element < other.element;
 }
 
-bool operator==(const Atom &a, const Atom &b) {
-	return a.element == b.element;
+bool Atom::operator==(const Atom &other) const {
+	return this->element == other.element;
 }

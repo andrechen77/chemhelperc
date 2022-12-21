@@ -10,9 +10,9 @@ struct Element {
 
 	Element(int atomicNumber, const std::string &symbol, const std::string &name);
 
-	friend bool operator<(const Element &a, const Element &b);
+	bool operator<(const Element &other) const;
 
-	friend bool operator==(const Element &a, const Element &b);
+	bool operator==(const Element &other) const;
 
 	friend std::ostream &operator<<(std::ostream &o, const Element &e);
 };

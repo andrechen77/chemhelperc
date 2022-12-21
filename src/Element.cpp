@@ -4,8 +4,8 @@ Element::Element(int atomicNumber, const std::string &symbol, const std::string 
 	atomicNumber(atomicNumber), symbol(symbol), name(name) {
 }
 
-bool operator<(const Element &a, const Element &b) {
-	return a.atomicNumber < b.atomicNumber;
+bool Element::operator<(const Element &other) const {
+	return this->atomicNumber < other.atomicNumber;
 }
 
 std::ostream &operator<<(std::ostream &o, const Element &e) {
@@ -13,6 +13,6 @@ std::ostream &operator<<(std::ostream &o, const Element &e) {
 	return o;
 }
 
-bool operator==(const Element &a, const Element &b) {
-	return a.symbol == b.symbol;
+bool Element::operator==(const Element &other) const {
+	return this->symbol == other.symbol;
 }
