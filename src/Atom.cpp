@@ -17,3 +17,7 @@ MolecularFormula Atom::toMolecularFormula() const {
 bool operator<(const Atom &a, const Atom &b) {
 	return a.element < b.element;
 }
+
+bool operator==(const Atom &a, const Atom &b) {
+	return a.element == b.element;
+}

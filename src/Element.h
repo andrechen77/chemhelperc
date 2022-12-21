@@ -12,5 +12,7 @@ struct Element {
 
 	friend bool operator<(const Element &a, const Element &b);
 
+	friend bool operator==(const Element &a, const Element &b);
+
 	friend std::ostream &operator<<(std::ostream &o, const Element &e);
 };

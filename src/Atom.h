@@ -13,4 +13,6 @@ struct Atom : Formula {
 	virtual MolecularFormula toMolecularFormula() const override;
 
 	friend bool operator<(const Atom &a, const Atom &b);
+
+	friend bool operator==(const Atom &a, const Atom &b);
 };

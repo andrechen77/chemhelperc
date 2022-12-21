@@ -12,3 +12,7 @@ std::ostream &operator<<(std::ostream &o, const Element &e) {
 	o << e.atomicNumber << "\t" << e.symbol << "\t" << e.name;
 	return o;
 }
+
+bool operator==(const Element &a, const Element &b) {
+	return a.symbol == b.symbol;
+}
