@@ -2,6 +2,7 @@
 
 #include "Atom.h"
 #include "Formula.h"
+#include "PeriodicTable.h"
 #include <vector>
 #include <tuple>
 
@@ -12,7 +13,7 @@ struct StructuralFormula : Formula {
 
 	StructuralFormula(const std::vector<std::tuple<std::reference_wrapper<Formula>, int>> &&composition);
 
-	StructuralFormula(const std::string formulaString);
+	StructuralFormula(const PeriodicTable &pTable, const std::string &formulaString);
 
 	virtual MolecularFormula toMolecularFormula() const override;
 

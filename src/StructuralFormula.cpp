@@ -1,5 +1,6 @@
 #include "StructuralFormula.h"
 #include "MolecularFormula.h"
+#include "chem_parser.h"
 
 StructuralFormula::StructuralFormula() :
 	composition() {
@@ -9,9 +10,9 @@ StructuralFormula::StructuralFormula(const std::vector<std::tuple<std::reference
 	composition(std::move(composition)) {
 }
 
-StructuralFormula::StructuralFormula(const std::string formula) :
+StructuralFormula::StructuralFormula(const PeriodicTable &pTable, const std::string &formula) :
 	composition() {
-	
+	// TODO
 }
 
 MolecularFormula StructuralFormula::toMolecularFormula() const {
