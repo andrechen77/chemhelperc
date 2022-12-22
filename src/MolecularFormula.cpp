@@ -26,6 +26,20 @@ MolecularFormula MolecularFormula::operator+(const MolecularFormula &other) cons
 	return result;
 }
 
+MolecularFormula &MolecularFormula::operator*=(int factor) {
+	for (auto &[atom, number] : this->composition) {
+		number *= factor;
+	}
+
+	return *this;
+}
+
+MolecularFormula MolecularFormula::operator*(int factor) const {
+	MolecularFormula result = *this;
+	result *= factor;
+	return result;
+}
+
 std::ostream &operator<<(std::ostream &o, const MolecularFormula &f) {
 	for (const auto &[atom, number] : f.composition) {
 		o << atom.element.symbol << number;

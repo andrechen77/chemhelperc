@@ -18,5 +18,9 @@ struct MolecularFormula : Formula {
 
 	MolecularFormula operator+(const MolecularFormula &other) const;
 
+	MolecularFormula &operator*=(int factor);
+
+	MolecularFormula operator*(int factor) const;
+
 	friend std::ostream &operator<<(std::ostream &o, const MolecularFormula &f);
 };
