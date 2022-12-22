@@ -66,15 +66,15 @@ int main() {
 	Atom Cl = *pTable.getAtom("Cl");
 	Atom P = *pTable.getAtom("P");
 	Atom O = *pTable.getAtom("O");
+
 	StructuralFormula phosphate({
 		{P, 1},
 		{O, 4}
 	});
-	StructuralFormula h3po4({
+	StructuralFormula molecule({
 		{H, 3},
 		{P, 2},
 		{phosphate, 2}
 	});
-	auto c = h3po4.toMolecularFormula();
-	std::cout << c;
+	std::cout << molecule;
 }

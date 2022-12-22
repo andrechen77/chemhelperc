@@ -21,3 +21,12 @@ MolecularFormula StructuralFormula::toMolecularFormula() const {
 	}
 	return result;
 }
+
+void StructuralFormula::printTo(std::ostream &o) const {
+	o << "(";
+	for (const auto &[formula, factor] : composition) {
+		formula.get().printTo(o);
+		o << factor;
+	}
+	o << ")";
+}

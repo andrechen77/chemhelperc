@@ -15,4 +15,6 @@ struct Atom : Formula {
 	bool operator<(const Atom &other) const;
 
 	bool operator==(const Atom &other) const;
+
+	virtual void printTo(std::ostream &o) const override;
 };

@@ -40,10 +40,8 @@ MolecularFormula MolecularFormula::operator*(int factor) const {
 	return result;
 }
 
-std::ostream &operator<<(std::ostream &o, const MolecularFormula &f) {
-	for (const auto &[atom, number] : f.composition) {
+void MolecularFormula::printTo(std::ostream &o) const {
+	for (const auto &[atom, number] : composition) {
 		o << atom.element.symbol << number;
 	}
-	
-	return o;
 }

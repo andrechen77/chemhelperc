@@ -22,5 +22,5 @@ struct MolecularFormula : Formula {
 
 	MolecularFormula operator*(int factor) const;
 
-	friend std::ostream &operator<<(std::ostream &o, const MolecularFormula &f);
+	virtual void printTo(std::ostream &o) const override;
 };
