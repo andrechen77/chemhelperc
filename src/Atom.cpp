@@ -22,6 +22,6 @@ bool Atom::operator==(const Atom &other) const {
 	return this->element == other.element;
 }
 
-void Atom::printTo(std::ostream &o) const {
+void Atom::printTo(std::ostream &o, bool inside) const {
 	o << element.symbol;
 }

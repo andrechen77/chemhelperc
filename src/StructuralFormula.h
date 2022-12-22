@@ -17,5 +17,5 @@ struct StructuralFormula : Formula {
 
 	virtual MolecularFormula toMolecularFormula() const override;
 
-	virtual void printTo(std::ostream &o) const override;
+	virtual void printTo(std::ostream &o, bool inside) const override;
 };

@@ -1,6 +1,5 @@
 #include "StructuralFormula.h"
 #include "MolecularFormula.h"
-#include "chem_parser.h"
 
 StructuralFormula::StructuralFormula() :
 	composition() {
@@ -17,17 +16,23 @@ StructuralFormula::StructuralFormula(const PeriodicTable &pTable, const std::str
 
 MolecularFormula StructuralFormula::toMolecularFormula() const {
 	MolecularFormula result;
-	for (const auto &[formula, factor] : this->composition) {
-		result += formula.get().toMolecularFormula() * factor;
+	for (const auto &[formula, number] : this->composition) {
+		result += formula.get().toMolecularFormula() * number;
 	}
 	return result;
 }
 
-void StructuralFormula::printTo(std::ostream &o) const {
-	o << "(";
-	for (const auto &[formula, factor] : composition) {
-		formula.get().printTo(o);
-		o << factor;
+void StructuralFormula::printTo(std::ostream &o, bool inside) const {
+	if (inside) {
+		o << "(";
 	}
-	o << ")";
+	for (const auto &[formula, number] : composition) {
+		formula.get().printTo(o, true);
+		if (number > 1) {
+			o << number;
+		}
+	}
+	if (inside) {
+		o << ")";
+	}
 }
