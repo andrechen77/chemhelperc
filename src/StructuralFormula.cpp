@@ -15,5 +15,9 @@ StructuralFormula::StructuralFormula(const std::string formula) :
 }
 
 MolecularFormula StructuralFormula::toMolecularFormula() const {
-	return MolecularFormula{}; // TODO
+	MolecularFormula result;
+	for (const auto &[formula, factor] : this->composition) {
+		result += formula.get().toMolecularFormula() * factor;
+	}
+	return result;
 }

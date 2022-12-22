@@ -2,6 +2,7 @@
 #include "PeriodicTable.h"
 #include "chem_parser.h"
 #include "MolecularFormula.h"
+#include "StructuralFormula.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -63,8 +64,17 @@ int main() {
 	Atom He = *pTable.getAtom("He");
 	Atom Li = *pTable.getAtom("Li");
 	Atom Cl = *pTable.getAtom("Cl");
-	MolecularFormula a({{H, 1}, {Cl, 2}});
-	MolecularFormula b({{H, 3}, {He, 7}});
-	auto c = H.toMolecularFormula();
+	Atom P = *pTable.getAtom("P");
+	Atom O = *pTable.getAtom("O");
+	StructuralFormula phosphate({
+		{P, 1},
+		{O, 4}
+	});
+	StructuralFormula h3po4({
+		{H, 3},
+		{P, 2},
+		{phosphate, 2}
+	});
+	auto c = h3po4.toMolecularFormula();
 	std::cout << c;
 }
