@@ -63,5 +63,8 @@ int main() {
 	Atom He = *pTable.getAtom("He");
 	Atom Li = *pTable.getAtom("Li");
 	Atom Cl = *pTable.getAtom("Cl");
-	MolecularFormula mf({{H, 1}, {Cl, 2}});
+	MolecularFormula a({{H, 1}, {Cl, 2}});
+	MolecularFormula b({{H, 3}, {He, 7}});
+	MolecularFormula c = a + b;
+	std::cout << c;
 }
