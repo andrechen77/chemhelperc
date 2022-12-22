@@ -11,7 +11,7 @@ const Element &Atom::operator*() const {
 }
 
 MolecularFormula Atom::toMolecularFormula() const {
-	return MolecularFormula{}; // TODO
+	return MolecularFormula({{*this, 1}});
 }
 
 bool Atom::operator<(const Atom &other) const {
