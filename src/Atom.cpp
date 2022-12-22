@@ -6,7 +6,7 @@ Atom::Atom(const Element &element) :
 	element(element) {
 }
 
-const Element &Atom::operator*() const {
+const Element &Atom::getElement() const {
 	return element;
 }
 

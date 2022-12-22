@@ -5,8 +5,12 @@
 #include <map>
 #include <iostream>
 
-struct MolecularFormula : Formula {
+class MolecularFormula : public Formula {
+	private:
+
 	std::map<Atom, int> composition;
+
+	public:
 
 	MolecularFormula();
 

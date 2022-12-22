@@ -20,6 +20,10 @@ PeriodicTable::PeriodicTable(std::istream &input) :
 	}
 }
 
+const std::set<Element> &PeriodicTable::getElements() const {
+	return elements;
+}
+
 std::optional<Atom> PeriodicTable::getAtom(const std::string &symbol) const {
 	for (const Element &e : elements) {
 		if (e.symbol == symbol) {

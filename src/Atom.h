@@ -3,12 +3,16 @@
 #include "Element.h"
 #include "Formula.h"
 
-struct Atom : Formula {
+class Atom : public Formula {
+	private:
+
 	const Element &element;
+
+	public:
 
 	Atom(const Element &element);
 
-	const Element &operator*() const;
+	const Element &getElement() const;
 
 	virtual MolecularFormula toMolecularFormula() const override;
 

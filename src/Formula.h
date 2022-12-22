@@ -2,9 +2,11 @@
 
 #include <iostream>
 
-struct MolecularFormula;
+class MolecularFormula;
 
-struct Formula {
+class Formula {
+	public:
+
 	virtual MolecularFormula toMolecularFormula() const = 0;
 
 	/**

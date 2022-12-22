@@ -6,8 +6,12 @@
 #include <vector>
 #include <tuple>
 
-struct StructuralFormula : Formula {
+class StructuralFormula : public Formula {
+	private:
+
 	std::vector<std::tuple<std::reference_wrapper<Formula>, int>> composition;
+
+	public:
 
 	StructuralFormula();
 

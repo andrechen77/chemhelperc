@@ -11,7 +11,7 @@
 #include <functional>
 
 void printTable(const PeriodicTable &pTable) {
-	for (const Element &e : pTable.elements) {
+	for (const Element &e : pTable.getElements()) {
 		std::cout << e << "\n";
 	}
 }
@@ -34,7 +34,7 @@ void elementLookup(const PeriodicTable &pTable) {
 	static auto processInput = [](const PeriodicTable &pTable, const std::string &userInput) {
 		std::optional<Atom> e = pTable.getAtom(userInput);
 		if (e.has_value()) {
-			std::cout << "Found element\t" << (**e) << "\n";
+			std::cout << "Found element\t" << (*e).getElement() << "\n";
 		} else {
 			std::cout << "Found no matching element\n";
 		}

@@ -42,7 +42,7 @@ MolecularFormula MolecularFormula::operator*(int factor) const {
 
 void MolecularFormula::printTo(std::ostream &o, bool inside) const {
 	for (const auto &[atom, number] : composition) {
-		o << atom.element.symbol;
+		o << atom.getElement().symbol;
 		if (number > 1) {
 			o << number;
 		}
